@@ -12,7 +12,6 @@ import android.widget.Button;
 public class MyActivity extends Activity {
 
     private Button showNotificationButton;
-    private Button hideNotificationButton;
 
     private Context context = this;
 
@@ -23,22 +22,12 @@ public class MyActivity extends Activity {
 
         showNotificationButton = (Button)findViewById(R.id.show_notification_button);
         showNotificationButton.setOnClickListener(showNotificationClickListener);
-
-        hideNotificationButton = (Button)findViewById(R.id.hide_notification_button);
-        hideNotificationButton.setOnClickListener(hideNotificationClickListener);
     }
 
     private View.OnClickListener showNotificationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             Notifications.showNotification(context);
-        }
-    };
-
-    private View.OnClickListener hideNotificationClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-//            Notifications.hideNotification(context);
         }
     };
 
