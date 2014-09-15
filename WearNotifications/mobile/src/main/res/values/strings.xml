@@ -7,5 +7,8 @@
     <string name="plain_notification">Plain notification</string>
     <string name="grouped_notification">Grouped notification</string>
     <string name="paged_notification">Paged notification</string>
+    <string name="action_notification">Action notification</string>
+
+    <string name="map">Map</string>
 
 </resources>

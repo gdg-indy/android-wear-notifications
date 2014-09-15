@@ -13,6 +13,7 @@ public class MyActivity extends Activity {
     private Button plainNotificationButton;
     private Button groupedNotificationButton;
     private Button pagedNotificationButton;
+    private Button actionNotificationButton;
 
     private Context context = this;
 
@@ -29,6 +30,9 @@ public class MyActivity extends Activity {
 
         pagedNotificationButton = (Button)findViewById(R.id.paged_notification_button);
         pagedNotificationButton.setOnClickListener(pagedNotificationClickListener);
+
+        actionNotificationButton = (Button)findViewById(R.id.action_notification_button);
+        actionNotificationButton.setOnClickListener(actionNotificationClickListener);
     }
 
     private View.OnClickListener plainNotificationClickListener = new View.OnClickListener() {
@@ -49,6 +53,13 @@ public class MyActivity extends Activity {
         @Override
         public void onClick(View view) {
             new PagedNotification(context).show();
+        }
+    };
+
+    private View.OnClickListener actionNotificationClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            new ActionNotification(context).show();
         }
     };
 }
