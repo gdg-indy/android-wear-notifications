@@ -10,6 +10,12 @@
     tools:context=".MyActivity">
 
     <Button
+        android:id="@+id/plain_notification_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/plain_notification"/>
+
+    <Button
         android:id="@+id/grouped_notification_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

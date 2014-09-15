@@ -4,6 +4,7 @@
     <string name="app_name">Wear Notifications</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="plain_notification">Plain notification</string>
     <string name="grouped_notification">Grouped notification</string>
     <string name="paged_notification">Paged notification</string>
 
