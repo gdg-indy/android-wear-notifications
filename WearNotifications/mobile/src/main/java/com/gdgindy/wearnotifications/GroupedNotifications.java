@@ -7,7 +7,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.NotificationCompat.WearableExtender;
 
-public class Notifications {
+public class GroupedNotifications {
 
     private static final String NOTIFICATION_GROUP = "gdg-indy-notifications";
 

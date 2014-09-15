@@ -10,9 +10,15 @@
     tools:context=".MyActivity">
 
     <Button
-        android:id="@+id/show_notification_button"
+        android:id="@+id/grouped_notification_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_notification"/>
+        android:text="@string/grouped_notification"/>
+
+    <Button
+        android:id="@+id/paged_notification_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/paged_notification"/>
 
 </LinearLayout>

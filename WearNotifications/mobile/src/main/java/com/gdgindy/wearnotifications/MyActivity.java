@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MyActivity extends Activity {
 
-    private Button showNotificationButton;
+    private Button groupedNotificationButton;
 
     private Context context = this;
 
@@ -20,14 +20,14 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        showNotificationButton = (Button)findViewById(R.id.show_notification_button);
-        showNotificationButton.setOnClickListener(showNotificationClickListener);
+        groupedNotificationButton = (Button)findViewById(R.id.grouped_notification_button);
+        groupedNotificationButton.setOnClickListener(showNotificationClickListener);
     }
 
     private View.OnClickListener showNotificationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Notifications.showNotification(context);
+            GroupedNotifications.showNotification(context);
         }
     };
 
