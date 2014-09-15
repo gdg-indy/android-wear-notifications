@@ -1,5 +1,6 @@
 package com.gdgindy.wearnotifications;
 
+import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +11,7 @@ public class GdgNotification {
 
     private static int notificationId = 0;
 
-    protected Context context;
+    private Context context;
 
     public GdgNotification(Context context) {
         this.context = context;
@@ -18,12 +19,12 @@ public class GdgNotification {
 
     public void show() {
         NotificationCompat.Builder notificationBuilder = build();
-        notify(notificationBuilder);
+        notify(getNotification(notificationBuilder));
     }
 
     protected NotificationCompat.Builder build() {
         NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(getContext())
                         .setSmallIcon(R.drawable.ic_launcher)
                         .setContentTitle("Notification title")
                         .setContentText("Hey! A notification!")
@@ -34,24 +35,32 @@ public class GdgNotification {
         return notificationBuilder;
     }
 
-    protected void notify(NotificationCompat.Builder notificationBuilder) {
+    protected Notification getNotification(NotificationCompat.Builder notificationBuilder) {
+        return notificationBuilder.build();
+    }
+
+    protected void notify(Notification notification) {
         // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(context);
+                NotificationManagerCompat.from(getContext());
 
         // Build the notification and issues it with notification manager.
-        notificationManager.notify(getNewNotificationId(), notificationBuilder.build());
+        notificationManager.notify(getNewNotificationId(), notification);
     }
 
     protected void addPendingIntent(NotificationCompat.Builder notificationBuilder) {
         // Build intent for notification content
-        Intent viewIntent = new Intent(context, MyActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, viewIntent, 0);
+        Intent viewIntent = new Intent(getContext(), MyActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, viewIntent, 0);
 
         notificationBuilder.setContentIntent(pendingIntent);
     }
 
     protected int getNewNotificationId() {
         return ++notificationId;
+    }
+
+    protected Context getContext() {
+        return context;
     }
 }

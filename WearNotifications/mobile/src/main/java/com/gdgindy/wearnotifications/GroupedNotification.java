@@ -35,12 +35,12 @@ public class GroupedNotification extends GdgNotification {
 
     private void showGroupSummaryNotification() {
         // Build intent for notification content
-        Intent viewIntent = new Intent(context, MyActivity.class);
+        Intent viewIntent = new Intent(getContext(), MyActivity.class);
         PendingIntent viewPendingIntent =
-                PendingIntent.getActivity(context, 0, viewIntent, 0);
+                PendingIntent.getActivity(getContext(), 0, viewIntent, 0);
 
         NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(getContext())
                         .setContentTitle("A notification group")
                         .setSmallIcon(R.drawable.ic_launcher)
                         .setStyle(new NotificationCompat.InboxStyle()
@@ -55,7 +55,7 @@ public class GroupedNotification extends GdgNotification {
 
         // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(context);
+                NotificationManagerCompat.from(getContext());
 
         // Build the notification and issues it with notification manager.
         notificationManager.notify(getNewNotificationId(), notificationBuilder.build());
